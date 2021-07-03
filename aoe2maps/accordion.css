@@ -1,0 +1,51 @@
+.accordion
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.accordion > button
+{
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	padding: 4px;
+	text-align: left;
+}
+
+.accordion > div
+{
+	overflow: hidden;
+	padding-left: 4px;
+	padding-right: 4px;
+	transition-duration: 0.2s;
+	transition-property: color, max-height, padding-bottom, padding-top;
+	transition-timing-function: ease-in-out;
+}
+
+.accordion > div.closed
+{
+	color: rgba(0, 0, 0, 0);
+	padding-bottom: 1px;
+	padding-top: 1px;
+}
+
+.accordion > div.opened
+{
+	color: rgba(0, 0, 0, 1);
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+.accordion svg
+{
+	height: 10px;
+	transition: rotate 0.2s ease-in-out;
+	width: 10px;
+}
+
+.accordion svg.closed
+{
+	rotate: -90deg;
+}

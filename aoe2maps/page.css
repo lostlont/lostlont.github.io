@@ -1,0 +1,269 @@
+:root
+{
+	--background-color: rgb(242, 225, 181);
+	--row-background-color: rgb(224, 207, 164);
+	--header-background-color: rgb(206, 190, 147);
+	--dark-foreground-color: rgb(96, 83, 48);
+	--shadow-color: rgba(0, 0, 0, 0.25);
+	--light-shadow-color: rgba(0, 0, 0, 0.1);
+	--animation-duration: 0.4s;
+	--short-animation-delay: 0.25s;
+}
+
+body
+{
+	background-color: var(--background-color);
+	font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.table
+{
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	margin: 16px auto;
+	max-width: 960px;
+	padding-top: initial;
+	transition-duration: var(--animation-duration);
+	transition-property: padding-right, padding-top;
+	transition-timing-function: ease-in-out;
+}
+
+.table.menu-open
+{
+	padding-right: 240px;
+}
+
+.table.menu-collapsed
+{
+	padding-right: 40px;
+}
+
+.table > .row
+{
+	align-items: center;
+	background-color: var(--row-background-color);
+	box-shadow: 1px 3px 6px var(--shadow-color);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	max-height: 140px;
+	opacity: 100%;
+	overflow: hidden;
+	scale: 1.0 1.0;
+	transition-delay: 0s, 0s, var(--short-animation-delay), var(--short-animation-delay), 0s;
+	transition-duration: var(--animation-duration);
+	transition-property: margin-top, max-height, opacity, scale, filter;
+	transition-timing-function: ease-in-out;
+}
+
+.table > .row:not(:first-child)
+{
+	margin-top: 16px;
+}
+
+.table > .row > .header
+{
+	background-color: var(--header-background-color);
+}
+
+.table > .row > *
+{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.table > .row img
+{
+	max-width: 100%;
+}
+
+.menu
+{
+	background-color: var(--header-background-color);
+	box-shadow: 0px 0px 6px var(--shadow-color);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition-duration: var(--animation-duration);
+	transition-property: right, width;
+	transition-timing-function: ease-in-out;
+	width: 240px;
+}
+
+.menu .content
+{
+	overflow-y: auto;
+	transition-duration: var(--animation-duration);
+	transition-property: margin-left;
+	transition-timing-function: ease-in-out;
+}
+
+.menu.open
+{
+	right: 0;
+}
+
+.menu.collapsed
+{
+	right: -200px;
+}
+
+.menu.collapsed .content
+{
+	margin-left: 40px;
+}
+
+h2
+{
+	font-size: 1.5em;
+}
+
+h3
+{
+	font-size: 1.25em;
+}
+
+.accordion > button
+{
+	background-color: var(--header-background-color);
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.accordion > button:hover
+{
+	background-color: var(--row-background-color);
+}
+
+.accordion > div
+{
+	box-shadow: 0px 12px 12px -12px var(--light-shadow-color) inset;
+	display: flex;
+	flex-direction: column;
+}
+
+.hamburger
+{
+	background-color: var(--header-background-color);
+	grid-template-columns: 4px 0fr 0;
+	flex-shrink: 0;
+	justify-items: center;
+	width: 100%;
+}
+
+.hamburger::before
+{
+	content: '';
+}
+
+.hamburger::after
+{
+	content: '';
+}
+
+.hamburger:hover
+{
+	background-color: var(--row-background-color);
+}
+
+.hamburger line
+{
+	stroke: var(--dark-foreground-color);
+}
+
+@media (max-width: 1232px)
+{
+	.table.menu-open
+	{
+		padding-right: initial;
+	}
+
+	.table.menu-collapsed
+	{
+		padding-right: initial;
+	}
+}
+
+@media (max-width: 992px)
+{
+	.menu
+	{
+		height: auto;
+		right: 0;
+		transition-duration: var(--animation-duration);
+		transition-property: max-height;
+		width: 100%;
+	}
+
+	.menu.open
+	{
+		max-height: 50%;
+	}
+
+	.menu.collapsed
+	{
+		max-height: 40px;
+		right: 0;
+	}
+
+	.menu.collapsed .content
+	{
+		margin-left: initial;
+	}
+
+	.table
+	{
+		padding-top: 40px;
+		transition-delay: 0, 0;
+	}
+
+	.hamburger
+	{
+		grid-template-columns: 0px 1fr 0;
+	}
+}
+
+@media (max-width: 632px)
+{
+	.table > .row
+	{
+		grid-auto-flow: column;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		max-height: 220px;
+	}
+}
+
+.table > .row.hidden
+{
+	max-height: 0px;
+	opacity: 0%;
+	scale: 0.9 0.9;
+	transition-delay: var(--short-animation-delay), var(--short-animation-delay), 0s, 0s, 0s;
+}
+
+.table > .row.hidden:not(:first-child)
+{
+	margin-top: 0px;
+}
+
+.table > .row.disabled
+{
+	filter: grayscale(90%) brightness(85%);
+}
+
+.menu label
+{
+	cursor: pointer;
+	padding: 4px 0;
+}
+
+.menu label:hover
+{
+	background-color: var(--row-background-color);
+}

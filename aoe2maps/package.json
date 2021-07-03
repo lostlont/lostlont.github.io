@@ -1,0 +1,13 @@
+{
+  "name": "aoe2maps",
+  "collaborators": [
+    "Perjéssy Lóránt <lostlont@lostlont.hu>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "aoe2maps_bg.wasm",
+    "aoe2maps.js"
+  ],
+  "module": "aoe2maps.js",
+  "sideEffects": false
+}

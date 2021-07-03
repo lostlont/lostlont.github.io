@@ -1,0 +1,22 @@
+.hamburger
+{
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+	display: grid;
+	height: 40px;
+	padding: 0;
+	width: 40px;
+}
+
+.hamburger svg
+{
+	height: 32px;
+	width: 32px;
+}
+
+.hamburger line
+{
+	stroke-linecap: round;
+	stroke-width: 4px;
+}
