@@ -1076,8 +1076,12 @@ section,
   margin-bottom: 32px;
 }
 
+.about .content-wrapper .skills-showcase .skills-list .skill {
+  background-color: var(--accent-color);
+}
+
 .about .content-wrapper .skills-showcase .skills-list .skill-item {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .about .content-wrapper .skills-showcase .skills-list .skill-item .skill-info {
