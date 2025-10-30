@@ -1288,24 +1288,29 @@ section,
 
 .resume .experience-section .experience-cards .exp-card .card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
 .resume .experience-section .experience-cards .exp-card .card-header .company-logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%));
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 1.5rem;
 }
 
 .resume .experience-section .experience-cards .exp-card .card-header .company-logo i {
   font-size: 1.3rem;
   color: var(--contrast-color);
+}
+
+.resume .experience-section .experience-cards .exp-card .card-header .company-logo img {
+  padding: 8px;
+  filter: invert();
 }
 
 .resume .experience-section .experience-cards .exp-card .card-header .period-badge {
@@ -1319,7 +1324,7 @@ section,
   letter-spacing: 0.05em;
 }
 
-.resume .experience-section .experience-cards .exp-card .card-body h3 {
+.resume .experience-section .experience-cards .exp-card .card-header h3 {
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--heading-color);
@@ -1327,11 +1332,11 @@ section,
   letter-spacing: -0.01em;
 }
 
-.resume .experience-section .experience-cards .exp-card .card-body .company-name {
+.resume .experience-section .experience-cards .exp-card .card-header .company-name {
   font-size: 1rem;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0;
 }
 
 .resume .experience-section .experience-cards .exp-card .card-body .duration {
@@ -1343,6 +1348,27 @@ section,
   padding: 0.2rem 0.8rem;
   border-radius: 12px;
   margin-bottom: 1rem;
+}
+
+.resume .experience-section .experience-cards .exp-card .card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.resume .experience-section .experience-cards .exp-card .card-body ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.resume .experience-section .experience-cards .exp-card .card-body ul li i {
+  color: var(--accent-color);
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .resume .experience-section .experience-cards .exp-card .card-body .description {
