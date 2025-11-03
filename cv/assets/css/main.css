@@ -1115,6 +1115,12 @@ section,
   color: var(--accent-color);
 }
 
+.about .content-wrapper .skills-showcase .skills-list .skill-item .skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .about .content-wrapper .skills-showcase .skills-list .skill-item .progress {
   height: 10px;
   border-radius: 10px;
