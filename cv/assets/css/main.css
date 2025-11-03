@@ -1077,7 +1077,19 @@ section,
 }
 
 .about .content-wrapper .skills-showcase .skills-list .skill {
-  background-color: var(--accent-color);
+  color: color-mix(in srgb, var(--accent-color), white 20%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2pt;
+  line-height: 1.25;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+}
+
+.about .content-wrapper .skills-showcase .skills-list .skill.faint {
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
 .about .content-wrapper .skills-showcase .skills-list .skill-item {
